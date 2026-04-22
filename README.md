@@ -4,6 +4,10 @@
 
 VS Code などで実際に手を動かしながら、小さなハンズオン課題とコードレビューを繰り返して身につけていきます。
 
+🌐 **言語 / Language**: **日本語** · [English](./README.en.md) · [中文](./README.zh.md) · [Español](./README.es.md) · [Français](./README.fr.md)
+
+> スキル本体（Claude への指示）も **日本語 / English / 中文 / Español / Français** の 5 言語に対応しています。学習者の初回メッセージの言語を自動判定し、そのまま学習を進めます。
+
 ---
 
 ## こんな人のためのスキル
@@ -164,7 +168,12 @@ bash scripts/check_env.sh all      # 全部まとめて
 ```
 programming-tutor/
 ├── SKILL.md                          # エージェント本体の振る舞い定義
-├── README.md                         # このファイル
+├── README.md                         # このファイル（日本語）
+├── README.en.md                      # 英語版
+├── README.zh.md                      # 中国語版（簡体字）
+├── README.es.md                      # スペイン語版
+├── README.fr.md                      # フランス語版
+├── LICENSE                           # MIT
 ├── references/                       # ロード・オン・デマンドの教材
 │   ├── pedagogy.md                   # 教え方の原則
 │   ├── onboarding.md                 # ヒアリング手順
@@ -184,6 +193,19 @@ programming-tutor/
 ```
 
 ロード・オン・デマンドとは、学習者が選んだ技術の `references/<tech>.md` だけが必要なときに読まれる仕組みです。これによりエージェントのコンテキストが無駄に膨らみません。
+
+---
+
+## 多言語対応
+
+このスキルは学習者の母語として **日本語 / English / 中文（简体） / Español / Français** の 5 言語をサポートしています。
+
+- エージェントは**初回メッセージの言語**を自動判定して、その言語で教え始めます
+- 判定できないときは選択式の質問を 1 回だけ行います
+- 会話中いつでも切り替え可能です。例: 「今度は英語で」「请用中文」「en español por favor」「passons au français」「日本語に戻して」
+- コード・ファイル名・コマンド・ライブラリ名は**どの言語を選んでも英語のまま**です
+
+翻訳版の README は、このディレクトリ直下の `README.en.md` / `README.zh.md` / `README.es.md` / `README.fr.md` にあります。
 
 ---
 
