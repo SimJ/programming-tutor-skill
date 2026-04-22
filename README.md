@@ -57,24 +57,39 @@ VS Code などで実際に手を動かしながら、小さなハンズオン課
 
 ## インストール
 
-`programming-tutor.skill` は Skill アーカイブ（zip）です。
+このリポジトリには**ソースファイル**が置かれています。インストール方法は 3 通りあります。
 
-### Claude Code の場合
+### A) GitHub Releases から `.skill` をダウンロード（最も簡単）
 
-1. `programming-tutor.skill` をダブルクリックするか、Claude Code の UI から "Install Skill" で読み込む
-2. インストール後、Claude Code は自動的に `available_skills` に `programming-tutor` を追加する
+1. [Releases ページ](https://github.com/SimJ/programming-tutor-skill/releases) から最新版の `programming-tutor.skill` をダウンロード
+2. **Claude Code**: `.skill` ファイルをダブルクリックするか、UI の "Install Skill" で読み込む
+3. **Cowork**: `.skill` をチャットにドラッグして表示される "Save Skill" ボタンをクリック
 
-### Cowork の場合
+### B) リポジトリを直接クローンして配置
 
-1. `.skill` ファイルを Cowork に読み込ませると "Save Skill" ボタンが出るのでクリック
-2. 以降の会話で該当するリクエストが来た時に自動でトリガーされる
+開発者向け。常に最新の `main` を追いかけたい場合はこちらが便利です。
 
-### 手動インストール（開発者向け）
+```bash
+# Claude Code の場合
+git clone https://github.com/SimJ/programming-tutor-skill.git ~/.claude/skills/programming-tutor
 
-`programming-tutor/` ディレクトリを以下のパスに配置する：
+# Cowork の場合は、設定画面で表示される skills フォルダの配下にクローンする
+```
 
-- Claude Code: `~/.claude/skills/programming-tutor/`
-- Cowork: 管理画面から指定された skills フォルダ
+更新するときは `cd ~/.claude/skills/programming-tutor && git pull` だけで済みます。
+
+### C) 自分でビルドして `.skill` を作る
+
+フォークして改造した版を使いたいときや、Releases が公開されていないときはこちら。
+
+```bash
+git clone https://github.com/SimJ/programming-tutor-skill.git
+cd programming-tutor-skill
+bash scripts/build.sh
+# => dist/programming-tutor.skill が作られる
+```
+
+以降は A) と同じ要領でインストールします。
 
 ---
 

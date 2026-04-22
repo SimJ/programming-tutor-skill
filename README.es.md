@@ -55,24 +55,39 @@ Para tecnologías no cubiertas (Next.js, Flutter, frameworks web de Go, etc.), e
 
 ## Instalación
 
-`programming-tutor.skill` es un archivo de Skill (zip).
+Este repositorio contiene los **ficheros fuente**. Hay tres formas de instalar.
 
-### Claude Code
+### A) Descargar el `.skill` desde GitHub Releases (la más sencilla)
 
-1. Doble clic en `programming-tutor.skill`, o usa "Install Skill" desde la UI de Claude Code
-2. Tras la instalación, Claude Code añade `programming-tutor` a `available_skills` automáticamente
+1. Consigue el último `programming-tutor.skill` en la [página de Releases](https://github.com/SimJ/programming-tutor-skill/releases)
+2. **Claude Code**: doble clic en el `.skill`, o usa "Install Skill" en la UI
+3. **Cowork**: arrastra el `.skill` al chat y pulsa "Save Skill"
 
-### Cowork
+### B) Clonar el repositorio directamente en tu carpeta de skills
 
-1. Arrastra el `.skill` a Cowork — aparecerá un botón "Save Skill"
-2. A partir de ahí, las solicitudes relevantes activan la skill automáticamente
+Ideal si quieres seguir `main` siempre al día.
 
-### Instalación manual (desarrolladores)
+```bash
+# Claude Code
+git clone https://github.com/SimJ/programming-tutor-skill.git ~/.claude/skills/programming-tutor
 
-Coloca el directorio `programming-tutor/` en:
+# Para Cowork, clónalo dentro de la carpeta de skills que aparece en ajustes
+```
 
-- Claude Code: `~/.claude/skills/programming-tutor/`
-- Cowork: la carpeta de skills que ves en ajustes
+Para actualizar: `cd ~/.claude/skills/programming-tutor && git pull`.
+
+### C) Construir el `.skill` tú mismo
+
+Útil si has hecho un fork y lo modificaste, o si aún no hay Release publicado.
+
+```bash
+git clone https://github.com/SimJ/programming-tutor-skill.git
+cd programming-tutor-skill
+bash scripts/build.sh
+# => dist/programming-tutor.skill
+```
+
+Luego instálalo como en la opción A.
 
 ---
 

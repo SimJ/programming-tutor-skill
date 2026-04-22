@@ -55,24 +55,39 @@
 
 ## 安装
 
-`programming-tutor.skill` 是 Skill 归档（zip）。
+本仓库存放的是**源文件**。有三种安装方式可选。
 
-### Claude Code
+### A) 从 GitHub Releases 下载 `.skill`（最简单）
 
-1. 双击 `programming-tutor.skill`，或者在 Claude Code UI 中选择 "Install Skill"
-2. 安装后自动出现在 `available_skills` 中
+1. 在 [Releases 页面](https://github.com/SimJ/programming-tutor-skill/releases) 下载最新的 `programming-tutor.skill`
+2. **Claude Code**：双击 `.skill`，或者在 UI 中选择 "Install Skill"
+3. **Cowork**：把 `.skill` 拖进对话窗口，点击 "Save Skill"
 
-### Cowork
+### B) 直接克隆仓库到 skills 文件夹
 
-1. 把 `.skill` 文件拖进 Cowork，会出现 "Save Skill" 按钮
-2. 之后相关请求会自动触发本技能
+适合开发者——希望跟上 `main` 的最新状态。
 
-### 手动安装（开发者）
+```bash
+# Claude Code
+git clone https://github.com/SimJ/programming-tutor-skill.git ~/.claude/skills/programming-tutor
 
-把 `programming-tutor/` 目录放到：
+# Cowork：克隆到设置中显示的 skills 文件夹下
+```
 
-- Claude Code：`~/.claude/skills/programming-tutor/`
-- Cowork：设置中显示的 skills 文件夹
+以后更新只需 `cd ~/.claude/skills/programming-tutor && git pull`。
+
+### C) 自己构建 `.skill`
+
+如果你 fork 并做了修改，或者还没有发布 Release，就用这种方式。
+
+```bash
+git clone https://github.com/SimJ/programming-tutor-skill.git
+cd programming-tutor-skill
+bash scripts/build.sh
+# => dist/programming-tutor.skill
+```
+
+生成的文件按 A) 的方法安装即可。
 
 ---
 
